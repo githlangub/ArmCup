@@ -5,9 +5,8 @@ class A
 	public:
 	int a=10;
 };
-int main()
+int main(int argc,char* argv[])
 {
-	A A1;
-	cout<<A1.a<<endl;
+	cout<<argv[1][0]<<endl;
 	return 0;
 }

@@ -1,7 +1,11 @@
 #ifndef __PLATE_HPP__
 #define __PLATE_HPP__
 
-unsigned char Plate[577][184];   //车牌数据
+#define WIDTH 577
+#define HEIGHT 184
+
+unsigned char Plate[WIDTH][HEIGHT];   //车牌数据
+unsigned char AllPlate[10][WIDTH][HEIGHT];
 
 const unsigned char White=1,Black=0;   //白为0,黑为1
 
@@ -27,6 +31,18 @@ int Position[7][4]={	{23,85,26,154},
 			{500,560,26,154}};   //车牌字符位置参考值，建议由切割算法生成(7个字符，左、右、上、下边界坐标)
 
 int Feature[5]={0};   //被测车牌数字特征
+
+const double TH_nor_H=10.00/WIDTH;
+const double TH_nor_V=10.00/HEIGHT;
+const double TH_noi_X=5.00/WIDTH;
+const double TH_noi_Y=5.00/HEIGHT;
+
+int Vertical_Cut[10][2]={0};
+int Horizontal_Cut[10][2]={0};
+int Vertical[577]={0};
+int Horizontal[184]={0};
+
+double District_Count[10][9]={0.00};
 
 #endif
 
